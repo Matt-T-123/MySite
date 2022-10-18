@@ -767,17 +767,14 @@ I live in the UK</p></center>
                         function renderTime() {
                             var currentTime = new Date();
                             var diem = "AM";
-                            var h = currentTime.getHours();
+                            var h = currentTime.getUTCHours() + 1;
                             var m = currentTime.getMinutes();
                             var s = currentTime.getSeconds();
                             setTimeout('renderTime()', 1000);
-                            if (h == 0) {
-                                h = 12;
-                            } else if (h > 12) {
-                                h = h - 12;
-                                diem = "PM";
-                            }
-                            if (h < 10) {
+                            if (h > 12) {
+    				diem = "PM";
+			    }
+			    if (h < 10) {
                                 h = "0" + h;
                             }
                             if (m < 10) {
@@ -801,12 +798,12 @@ I live in the UK</p></center>
                             var nday = d.getDay(),
                                 nmonth = d.getMonth(),
                                 ndate = d.getDate();
-                            var nhour = d.getHours(),
+                            var nhour = d.getUTCHours() + 1,
                                 nmin = d.getMinutes(),
                                 nsec = d.getSeconds();
                             if (nmin <= 9) nmin = "0" + nmin
                             if (nsec <= 9) nsec = "0" + nsec;
-
+			    if (nhour < 1) nday+=1;
                             document.getElementById('date').innerHTML = "" + tday[nday] + ", " + tmonth[nmonth] + " " + ndate + "";
                         }
 
