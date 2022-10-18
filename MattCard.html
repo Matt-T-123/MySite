@@ -783,6 +783,9 @@ I live in the UK</p></center>
                             if (s < 10) {
                                 s = "0" + s;
                             }
+			    if (h = 24) {
+				h = "00"
+			    }
                             var myClock = document.getElementById('clockDisplay');
                             myClock.textContent = h + ":" + m + ":" + s + " " + diem;
                             myClock.innerText = h + ":" + m + ":" + s + " " + diem;
