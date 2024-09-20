@@ -12,7 +12,7 @@
 
 <body oncontextmenu="if (!window.__cfRLUnblockHandlers) return false; return false;" unselectable="on" onselectstart="if (!window.__cfRLUnblockHandlers) return false; return false;">
     <canvas width="1879" height="977"></canvas>
-    <title>Matt.T <3#4646</title>
+    <title>Matt.T</title>
     <style>
         * {
             cursor: url(https://nafriklopper.club/cursor.cur) !important;
@@ -25,18 +25,17 @@
         var Pos = 0;
         var Invert = false;
 
-        var TextL = "Matt.T <3";
-        var TextR = "#4646";
+        var TextL = "Matt.T";
 
         function loop() {
-            var Target = Flip ? TextR : TextL;
+            var Target = Flip ? : TextL;
 
             if (Pos > Target.length) {
                 Invert = true;
             } else if (Pos < 0) {
                 if (Invert) {
                     Flip = !Flip;
-                    Target = Flip ? TextR : TextL;
+                    Target = Flip ? : TextL;
 
                     Pos = 0;
                 }
