@@ -227,11 +227,16 @@
         a:hover {
             cursor: url(https://nafriklopper.club/cursor_hover.cur) !important;
         }
+        
+        .circular--square { 
+            border-radius: 50%; 
+        }
     </style>
     <div id="particles-js"></div>
     <div class="center">
         <center>
             <pre>    <!--Bio starts here-->
+<img class="circular--square" src="profile.png" />
 <a href="https://www.discordapp.com/users/268848189463986177" style="color:#5865F2"><b>My Discord</b></a>
 <a href="https://www.linkedin.com/in/mateusz-turowski-2a1259250" style="color:#0077B5"><b>Linkedin</b></a>
 <a href="https://github.com/Matt-T-123" style="color:#fafbfc"><b>Github</b></a>
@@ -778,7 +783,7 @@ and Java, or Python, applications.</p></center>
                             var m = currentTime.getMinutes();
                             var s = currentTime.getSeconds();
                             setTimeout('renderTime()', 1000);
-                            if (h > 12) {
+                            if (h >= 12) {
                                 diem = "PM";
                             }
                             if (h < 10) {
@@ -790,7 +795,11 @@ and Java, or Python, applications.</p></center>
                             if (s < 10) {
                                 s = "0" + s;
                             }
-                            if (h >= 0 && h < 13) {
+                            if (h >= 0 && h < 12) {
+                                diem = "AM";
+                            }
+                            if (h = 24) {
+                                h = 0;
                                 diem = "AM";
                             }
                             var myClock = document.getElementById('clockDisplay');
