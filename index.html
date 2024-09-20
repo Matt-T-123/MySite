@@ -239,10 +239,8 @@
             <pre>    <!--Bio starts here-->
   <a href="https://www.discordapp.com/users/268848189463986177" style="color:#5865F2"><b>My Discord</b></a>
   <a href="https://www.linkedin.com/in/mateusz-turowski-2a1259250" style="color:#0077B5"><b>Linkedin</b></a>
-
-<p id="age">age</p>
 <p>
-19
+I am <span id="age"></span>
 He/Him
 I live in the UK</p></center>
 </pre>
@@ -822,6 +820,14 @@ I live in the UK</p></center>
                             GetClock();
                             setInterval(GetClock, 1000);
                         }
+                    </script>
+                    <script>
+                        var age = document.getElementById('age');
+                        var birthdate = new Date('2004-09-24');
+                        var cur = new Date();
+                        var diff = cur - birthdate;
+                        var age = Math.floor(diff / 31557600000);
+                        document.getElementById('age').innerHTML = age;
                     </script>
                 </div>
             </div>
