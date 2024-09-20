@@ -19,7 +19,6 @@
         }
     </style>
     <script>
-        var Flip = false;
 
         var CurStr = "";
         var Pos = 0;
@@ -28,14 +27,13 @@
         var TextL = "Matt.T";
 
         function loop() {
-            var Target = Flip ? : TextL;
+            var Target = TextL;
 
             if (Pos > Target.length) {
                 Invert = true;
             } else if (Pos < 0) {
                 if (Invert) {
-                    Flip = !Flip;
-                    Target = Flip ? : TextL;
+                    Target = TextL;
 
                     Pos = 0;
                 }
